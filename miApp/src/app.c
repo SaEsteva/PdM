@@ -14,9 +14,9 @@
 #include "task1.h"     // <= Task 1
 #include "task2.h"     // <= Task 2
 //#include "task3.h"     // <= Task 3
-#include "../../modular_tasks/inc/Antirebote.h"
-#include "../../modular_tasks/inc/Led.h"
-#include "../../modular_tasks/inc/semaforo.h"
+#include "Antirebote.h"
+#include "Led.h"
+#include "semaforo.h"
 
 //bool_t* pValor = NULL;
 bool_t ValorTec[3] = {OFF, ON, ON};

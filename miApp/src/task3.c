@@ -7,9 +7,7 @@
 
 /*==================[inclusions]=============================================*/
 
-#include "task1.h"  // <= own header
-//#include "../../modular_tasks/inc/tarea.h"
-
+#include "task3.h"  // <= own header
 
 /*==================[macros and definitions]=================================*/
 
@@ -27,16 +25,13 @@
 /*==================[external functions definition]==========================*/
 
 // Funcion que inicializa la tarea
-void task1_Init( void ){
-   boardInit();
-   InicializarBoton();
+void task3_Init( void ){
+   gpioConfig(LED2,GPIO_OUTPUT);
 }
 
 // Funcion que se ejecuta periodicamente
-void task1_Update( void* taskParam ){
-	//printf("Se actualiza tarea 1");
-	Antirebote( taskParam );
-   	//printf(taskParam);
+void task3_Update( void* taskParam ){   
+   gpioToggle(LED2);
 }
 
 /*==================[end of file]============================================*/

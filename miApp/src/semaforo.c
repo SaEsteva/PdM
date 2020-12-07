@@ -9,7 +9,7 @@
 /*=====[Inclusions of function dependencies]=================================*/
 
 #include "sapi.h"
-#include "../inc/semaforo.h"
+#include "semaforo.h"
 
 
 /*=====[Definition macros of private constants]==============================*/
