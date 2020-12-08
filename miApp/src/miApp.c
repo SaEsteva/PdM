@@ -8,41 +8,48 @@
 // The maximum number of tasks required at any one time during the execution
 // of the program. MUST BE ADJUSTED FOR EACH NEW PROJECT
 #define SCHEDULER_MAX_TASKS   (10)
+#define TAREA_MEF_TICK   100
+#define TAREA_TEC_TICK   50
+#define TAREA_RX_TICK   5000
 
 #include "sapi.h"      // <= sAPI
 #include "seos_pont.h" // <= Simple Embedded Operating Sistem (cooperative)
-#include "task1.h"     // <= Task 1
-#include "task2.h"     // <= Task 2
-//#include "task3.h"     // <= Task 3
-#include "Antirebote.h"
-#include "Led.h"
-#include "semaforo.h"
+#include "Teclas.h"     // <= Task 1
+#include "MEF.h"     // <= Task 2
+#include "RX.h"     // <= rx interrupt
+#include "Antirebote.h" // <= boton antirebote
+#include "Led.h" // <= led de EDU-CIA
+#include "semaforo.h" // <= MEF de leds
 
-//bool_t* pValor = NULL;
-bool_t ValorTec[3] = {OFF, ON, ON};
+//Estados de la MEF y selecion de MEF (OFF leds normales, ON leds RGB)
+bool_t ValorUART[5] = {OFF, ON, ON, OFF};
+
+
 int main( void ){
 
    // ---------- CONFIGURACIONES ------------------------------
    // Inicializar y configurar la plataforma
    boardInit();
+   boardConfig();
    
-   //pValor = &ValorTec[0];
-   task1_Init();
-   task2_Init();
+   Teclas_Init();
+   MEF_Init();
+   enable_rx(&ValorUART[0]);
 
 
    // FUNCION que inicializa el planificador de tareas
    schedulerInit();
 
    // Se agrega la tarea tarea1 al planificador
-   schedulerAddTask( task1_Update, // funcion de tarea a agregar
-                     &ValorTec[0],            // parametro de la tarea
+   schedulerAddTask( Teclas_Update, // funcion de tarea a agregar
+                     &ValorUART[0],            // parametro de la tarea
                      0,            // offset de ejecucion en ticks
-                     50           // periodicidad de ejecucion en ticks
+					 TAREA_TEC_TICK           // periodicidad de ejecucion en ticks
                    );
    
-   schedulerAddTask( task2_Update, &ValorTec[0], 1, 100 );
-   //schedulerAddTask( task3_Update, 0, 2, 300 );
+   schedulerAddTask( MEF_Update, &ValorUART[0], 1, TAREA_MEF_TICK );
+
+   schedulerAddTask( RX_Update, &ValorUART[0], 2, TAREA_RX_TICK );
 
    // FUNCION que inicializa la interrupcion que ejecuta el planificador de
    // tareas con tick cada 1ms.
@@ -51,16 +58,7 @@ int main( void ){
    // ---------- REPETIR POR SIEMPRE --------------------------
    while( TRUE )
    {
-      // Se despachan (ejecutan) las tareas marcadas para su ejecucion.
-      // Luego se pone el sistema en bajo consumo hasta que ocurra la
-      // proxima interrupcion, en este caso la de Tick.
-      // Al ocurrir la interrupcion de Tick se ejecutara el planificador
-      // que revisa cuales son las tareas a marcar para su ejecucion.
       schedulerDispatchTasks();
    }
-
-   // NO DEBE LLEGAR NUNCA AQUI, debido a que a este programa se ejecuta
-   // directamenteno sobre un microcontroladore y no es llamado por ningun
-   // Sistema Operativo, como en el caso de un programa para PC.
    return 0;
 }

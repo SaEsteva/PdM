@@ -15,6 +15,10 @@
 #define AMARILLO LED1
 #define VERDE LED3
 
+#define RRGB LEDR
+#define GRGB LEDG
+#define BRGB LEDB
+
 #define TIEMPO_EN_ROJO	3000// ms
 #define TIEMPO_EN_AMARILLO	500// ms
 #define TIEMPO_EN_VERDE	1000// ms
@@ -28,8 +32,9 @@ typedef enum{
 }ModoOperacion_t;
 
 void semaforo(bool_t *);
-void semaforo_normal(delay_t* ,gpioMap_t* ,bool_t );
-void semaforo_alarma(delay_t* ,gpioMap_t* ,bool_t );
-void semaforo_desconectado(delay_t* ,gpioMap_t* ,bool_t );
+void semaforo_normal(delay_t* ,gpioMap_t* ,bool_t,bool_t* );
+void semaforo_alarma(delay_t* ,gpioMap_t* ,bool_t,bool_t* );
+void semaforo_desconectado(delay_t* ,gpioMap_t* ,bool_t,bool_t* );
+void MEF_selec(bool_t, gpioMap_t,gpioMap_t);
 
 #endif /* __semaphore_H__ */

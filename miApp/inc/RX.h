@@ -5,8 +5,8 @@
  * Date: 2018/10/04
  *===========================================================================*/
 
-#ifndef _TASK2_H_
-#define _TASK2_H_
+#ifndef _RX_H_
+#define _RX_H_
 
 /*==================[inclusions]=============================================*/
 
@@ -27,10 +27,13 @@ extern "C" {
 /*==================[external functions declaration]=========================*/
 
 // Funcion que inicializa la tarea
-void task2_Init( void );
+void enable_rx(bool_t* );
 
+void onRx( void* );
+
+void send_rx(bool_t*);
 // Funcion que se ejecuta periodicamente
-void task2_Update( void* taskParam );
+void RX_Update(void *);
 
 /*==================[cplusplus]==============================================*/
 
@@ -39,4 +42,4 @@ void task2_Update( void* taskParam );
 #endif
 
 /*==================[end of file]============================================*/
-#endif /* #ifndef _TASK2_H_ */
+#endif /* #ifndef _TASK3_H_ */

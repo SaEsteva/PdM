@@ -7,8 +7,7 @@
 
 /*==================[inclusions]=============================================*/
 
-#include "task1.h"  // <= own header
-//#include "../../modular_tasks/inc/tarea.h"
+#include "Teclas.h"
 
 
 /*==================[macros and definitions]=================================*/
@@ -27,16 +26,14 @@
 /*==================[external functions definition]==========================*/
 
 // Funcion que inicializa la tarea
-void task1_Init( void ){
+void Teclas_Init( void ){
    boardInit();
    InicializarBoton();
 }
 
 // Funcion que se ejecuta periodicamente
-void task1_Update( void* taskParam ){
-	//printf("Se actualiza tarea 1");
+void Teclas_Update( void* taskParam ){
 	Antirebote( taskParam );
-   	//printf(taskParam);
 }
 
 /*==================[end of file]============================================*/

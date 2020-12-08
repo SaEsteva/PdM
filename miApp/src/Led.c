@@ -29,4 +29,7 @@ void apagarLeds()
 	gpioWrite( LED1, OFF);
 	gpioWrite( LED2, OFF);
 	gpioWrite( LED3, OFF);
+	gpioWrite( LEDR, OFF);
+	gpioWrite( LEDG, OFF);
+	gpioWrite( LEDB, OFF);
 }

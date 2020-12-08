@@ -5,11 +5,12 @@
  * Date: 2018/10/04
  *===========================================================================*/
 
-#ifndef _TASK3_H_
-#define _TASK3_H_
+#ifndef _TASK1_H_
+#define _TASK1_H_
 
 /*==================[inclusions]=============================================*/
-
+#include <stdint.h>
+#include <stddef.h>
 #include "sapi.h"   // <= sAPI header
 
 /*==================[cplusplus]==============================================*/
@@ -27,10 +28,10 @@ extern "C" {
 /*==================[external functions declaration]=========================*/
 
 // Funcion que inicializa la tarea
-void task3_Init( void );
+void Teclas_Init( void );
 
 // Funcion que se ejecuta periodicamente
-void task3_Update( void* taskParam );
+void Teclas_Update( void* taskParam );
 
 /*==================[cplusplus]==============================================*/
 
@@ -39,4 +40,4 @@ void task3_Update( void* taskParam );
 #endif
 
 /*==================[end of file]============================================*/
-#endif /* #ifndef _TASK3_H_ */
+#endif /* #ifndef _TASK1_H_ */

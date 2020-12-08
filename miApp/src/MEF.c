@@ -7,7 +7,7 @@
 
 /*==================[inclusions]=============================================*/
 
-#include "task3.h"  // <= own header
+#include "MEF.h"  // <= own header
 
 /*==================[macros and definitions]=================================*/
 
@@ -25,13 +25,13 @@
 /*==================[external functions definition]==========================*/
 
 // Funcion que inicializa la tarea
-void task3_Init( void ){
-   gpioConfig(LED2,GPIO_OUTPUT);
+void MEF_Init( void ){
+   //gpioConfig(LED1,GPIO_OUTPUT);
 }
 
 // Funcion que se ejecuta periodicamente
-void task3_Update( void* taskParam ){   
-   gpioToggle(LED2);
+void MEF_Update( void* taskParam ){
+   	semaforo(taskParam);
 }
 
 /*==================[end of file]============================================*/
