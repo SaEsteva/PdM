@@ -1,4 +1,12 @@
-#include "RX.h"  // <= own header
+/*=============================================================================
+ * Copyright (c) 2020, Santiago Esteva <sesteva@fi.uba.ar>
+ * All rights reserved.
+ * License: bsd-3-clause (see LICENSE.txt)
+ * Date: 2020/10/28
+ * Version: 1.1
+ *===========================================================================*/
+
+#include "../inc/UART.h"  // <= own header
 
 static bool_t *parametro = NULL;
 static bool_t *estado_actual = NULL;
@@ -39,7 +47,7 @@ void onRx( void *noUsado )
 	//printf( "PARAMETRO <<%o>> <<%o>> <<%o>> UART\r\n", *parametro,*(parametro+1),*(parametro+2) );
 }
 
-void enable_rx(bool_t * estado )
+void enable_UART(bool_t * estado )
 {
    parametro = estado;
 	/* Inicializar la UART_USB junto con las interrupciones de Tx y Rx */
@@ -50,7 +58,7 @@ void enable_rx(bool_t * estado )
    uartInterrupt(UART_USB, true);
 }
 
-void RX_Update(void *estado)
+void UART_Update(void *estado)
 {
 	estado_actual = estado;
 

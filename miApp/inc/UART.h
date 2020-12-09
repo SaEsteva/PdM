@@ -1,3 +1,10 @@
+/*=============================================================================
+ * Copyright (c) 2020, Santiago Esteva <sesteva@fi.uba.ar>
+ * All rights reserved.
+ * License: bsd-3-clause (see LICENSE.txt)
+ * Date: 2020/10/28
+ * Version: 1.1
+ *===========================================================================*/
 
 #ifndef _RX_H_
 #define _RX_H_
@@ -24,13 +31,13 @@ extern "C" {
 /*==================[external functions declaration]=========================*/
 
 // Funcion que inicializa la tarea
-void enable_rx(bool_t* );
+void enable_UART(bool_t* );
 
 void onRx( void* );
 
 void send_rx(bool_t*);
 // Funcion que se ejecuta periodicamente
-void RX_Update(void *);
+void UART_Update(void *);
 
 /*==================[cplusplus]==============================================*/
 
