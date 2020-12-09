@@ -12,6 +12,7 @@
 #define TAREA_TEC_TICK   50
 #define TAREA_RX_TICK   5000
 
+
 #include "sapi.h"      // <= sAPI
 #include "seos_pont.h" // <= Simple Embedded Operating Sistem (cooperative)
 #include "Teclas.h"     // <= Task 1

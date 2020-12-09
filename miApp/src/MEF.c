@@ -26,7 +26,7 @@
 
 // Funcion que inicializa la tarea
 void MEF_Init( void ){
-   //gpioConfig(LED1,GPIO_OUTPUT);
+	apagarLeds();
 }
 
 // Funcion que se ejecuta periodicamente

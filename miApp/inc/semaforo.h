@@ -24,6 +24,7 @@
 #define TIEMPO_EN_VERDE	1000// ms
 #define TIEMPO_EN_ALARMA	1000// ms
 #define TIEMPO_EN_DESCONECTADO	500 // ms
+#define TIEMPO_DEFAULT	5000 // ms
 
 typedef enum{
 	NORMAL,
