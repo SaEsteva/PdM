@@ -1,9 +1,3 @@
-/*============================================================================
- * License: BSD-3-Clause
- * Copyright 2018, Eric Pernia <ericpernia@gmail.com>
- * All rights reserved.
- * Date: 2018/10/04
- *===========================================================================*/
 
 #ifndef _RX_H_
 #define _RX_H_

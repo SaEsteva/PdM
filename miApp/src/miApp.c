@@ -1,9 +1,3 @@
-/*============================================================================
- * License: BSD-3-Clause
- * Copyright 2018, Eric Pernia <ericpernia@gmail.com>
- * All rights reserved.
- * Date: 2018/10/04
- *===========================================================================*/
 
 // The maximum number of tasks required at any one time during the execution
 // of the program. MUST BE ADJUSTED FOR EACH NEW PROJECT
