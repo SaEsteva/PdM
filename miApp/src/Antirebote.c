@@ -49,7 +49,7 @@ void Antirebote( bool_t * estadoBotenes)
 	static delay_t DelayTecla;
 	static bool_t Boton;
 
-    // Refrehs button FSMs every 50 ms
+    // Refrehs button FSMs every 40 ms
     if( delayRead(&refreshButton) ) {
        buttonFsmUpdate( &myButton0 );
        buttonFsmUpdate( &myButton1 );

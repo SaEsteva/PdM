@@ -78,7 +78,7 @@ void UART_Update(void *estado)
 		uartWriteString( UART_USB,"La MEF actual es la ALARMA\r\n");
 	}else{
 		//printf( "Estado erroneo, enviar un nuevo estado con la codificacion correcta\r\n");
-		uartWriteString( UART_USB,"Estado erroneo, enviar un nuevo estado con la codificacion correcta\r\n");
+		uartWriteString( UART_USB,"Nuevo estado erroneo, enviar un nuevo estado con la codificacion correcta\r\n");
 	}
 
 	if (!*(parametro+3)){

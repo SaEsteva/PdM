@@ -21,7 +21,6 @@
 
 // Funcion que inicializa la tarea
 void Teclas_Init( void ){
-   boardInit();
    InicializarBoton();
 }
 
