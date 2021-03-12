@@ -57,10 +57,5 @@ void vApplicationStackOverflowHook( TaskHandle_t pxTask, char *pcTaskName )
 
 void vApplicationIdleHook()
 {
-	PRINTF( "Tarea 3\r\n" );
-	//delay_con_for( 1000 );
 
-	PRINTF( "Task %u min %u words\r\n", 1,  uxTaskGetStackHighWaterMark( task_handles[0] ) );
-	PRINTF( " Task %u min %u words\r\n", 2,  uxTaskGetStackHighWaterMark( task_handles[1] ) );
-	PRINTF( " Task %u min %u words\r\n", 3,  uxTaskGetStackHighWaterMark( task_handles[2] ) );
 }

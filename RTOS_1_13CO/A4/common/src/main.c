@@ -197,7 +197,12 @@ void tarea_B_code( void* taskParmPtr )
 {
 	PRINTF( "Tarea B\r\n" );
 
-	blink_n_500( 3, LED1 );
+	blink_n_500( 1, LED1 );
+	taskYIELD();
+	blink_n_500( 1, LED1 );
+	taskYIELD();
+	blink_n_500( 1, LED1 );
+	taskYIELD();
 
 	/* retomo tarea A, como tiene mayor prioridad, habra un cambio de contexto.*/
 	vTaskResume( task_handle_a );
@@ -210,7 +215,12 @@ void tarea_C_code( void* taskParmPtr )
 {
 	PRINTF( "Tarea C\r\n" );
 
-	blink_n_500( 3, LED2 );
+	blink_n_500( 1, LED2 );
+	taskYIELD();
+	blink_n_500( 1, LED2 );
+	taskYIELD();
+	blink_n_500( 1, LED2 );
+	taskYIELD();
 
 	/* suspendo la tarea actual, le va a dar el CPU a las tareas de menor prioridad (porque la tarea A esta suspendida) */
 	vTaskSuspend( task_handle_c);       /* se podria haber usado vTaskSuspend( 0 ) */

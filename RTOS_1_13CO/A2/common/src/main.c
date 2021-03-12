@@ -84,7 +84,7 @@ int main( void )
             tskIDLE_PRIORITY+1,         // Prioridad de la tarea
             &task_handles[1]            // Puntero a la tarea creada en el sistema
         );
-/*
+
     BaseType_t res3=
         xTaskCreate(
             Tarea_Monitor_Code,         // Funcion de la tarea a ejecutar
@@ -95,7 +95,6 @@ int main( void )
             &task_handles[2]            // Puntero a la tarea creada en el sistema
         );
 
-*/
 
     configASSERT( res1 == pdPASS && res2 == pdPASS );//&& res3 == pdPASS );
 
