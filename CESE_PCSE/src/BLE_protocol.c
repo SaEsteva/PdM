@@ -47,7 +47,7 @@ void data_ble_receive(){
     			BLE_buffer.buffer[BLE_buffer.bleindex] = data;
     			BLE_buffer.bleindex++;
     			BLE_buffer.state = Newdata;
-    			/* Deshabilito todas las interrupciones de UART_USB */
+    			/* Deshabilito todas las interrupciones de UART_BLE */
                 uartCallbackClr( UART_BLE, UART_RECEIVE );
     		}
     		break;
